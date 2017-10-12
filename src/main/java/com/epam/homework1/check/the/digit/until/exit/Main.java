@@ -1,14 +1,14 @@
 package com.epam.homework1.check.the.digit.until.exit;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 /* the program takes param from console from every line
 * checks the param, is it digit or literal
 * sout the result of checking
 * until user tape Exit
  */
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws IOException {
