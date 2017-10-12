@@ -1,0 +1,4 @@
+hw 05.10.2017
+
+1. create hit repository
+2. create package for hw, slack
