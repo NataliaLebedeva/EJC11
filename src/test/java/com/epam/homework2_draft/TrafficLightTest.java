@@ -1,4 +1,4 @@
-package com.epam.homework2;
+package com.epam.homework2_draft;
 
 import junit.framework.Assert;
 import org.junit.jupiter.api.Test;

@@ -1,25 +1,26 @@
 package com.epam.homework2;
 
-import org.apache.commons.lang3.math.NumberUtils;
+import com.epam.utils.Helper;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Main {
-    public static void main(String[] args) throws Exception {
+
+    public static void main(String[] args) throws IOException {
+        System.out.println("enter number of minutes");
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        String param = reader.readLine();
-        int value = 0;
-        int hours = 0;
-        float realMinutes = 0.0f;
-        int minutes = 0;
+        String timeRaw = reader.readLine();
+        String message = null;
 
-        value = Integer.parseInt(param);
-        if (value < 0) {
-            throw new Exception("Negative number");
+        if (Helper.isDigit(timeRaw)) {
+            LightColor lightColor1 = TrafficLight.GetLight(Integer.parseInt(timeRaw));
+            message = lightColor1.getName();
+        } else {
+            message = "NaN";
         }
-
+        System.out.println(message);
 
     }
-
 }

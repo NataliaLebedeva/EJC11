@@ -1,4 +1,4 @@
-package com.epam.homework2;
+package com.epam.homework2_draft;
 
 public enum LIGHT {
     GREEN("2"), YELLOW("1"), RED("0");
@@ -9,7 +9,7 @@ public enum LIGHT {
         this.value = value;
     }
 
-    public static LIGHT getBuValue(int value) {
+    public static LIGHT getByValue(int value) {
         switch (value) {
             case 0: return RED;
             case 1: return YELLOW;

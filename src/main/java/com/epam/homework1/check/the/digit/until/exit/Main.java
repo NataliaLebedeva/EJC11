@@ -1,5 +1,7 @@
 package com.epam.homework1.check.the.digit.until.exit;
 
+import com.epam.utils.Helper;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -23,7 +25,7 @@ public class Main {
             myString = bufferedReader.readLine();
             if (myString.equalsIgnoreCase("exit"))
                 break;
-            if (isDigit(myString)) {
+            if (Helper.isDigit(myString)) {
                 System.out.println(myString + " is a digit");
             } else {
                 System.out.println(myString + " is a text, not a digit");
@@ -32,12 +34,4 @@ public class Main {
         System.out.println("Program exit.");
     }
 
-    static boolean isDigit(String myString) {
-        if (myString.isEmpty())
-            return false;
-        for (int i = 0; i < myString.length(); i++)
-            if (!Character.isDigit(myString.charAt(i)))
-                return false;
-        return true;
-    }
 }
