@@ -8,17 +8,18 @@ import com.epam.homework3.ducks.WoodenDecoyDuck;
 public class MiniDuckSimulator {
     public static void main(String[] args) {
         Duck ducks[] = {
-                new MallardDuck(), new WoodenDecoyDuck(), new RubberDuck()
+                new MallardDuck(),
+                new WoodenDecoyDuck(),
+                new RubberDuck()
         };
 
-        for (int i = 0; i < ducks.length; i++) {
+        for (Duck duck : ducks) {
             System.out.println();
-            ducks[i].display();
-            ducks[i].performFly();
-            ducks[i].performQuack();
-            ducks[i].swim();
+            duck.display();
+            duck.performFly();
+            duck.performQuack();
+            duck.swim();
         }
-
     }
 }
 
