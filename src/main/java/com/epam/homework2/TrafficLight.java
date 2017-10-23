@@ -31,10 +31,12 @@ public class TrafficLight {
             throw new IllegalArgumentException("Time should be positive number");
 
         LightColor lightColor = null;
-        Integer actualMinutes = time;
+        Integer actualMinutes = time; // minutes responsible for color
 
-        if (time >= 10)
-            actualMinutes = time % 10;
+        if (time >= LIGHT_RANGE[2][1] + 1)
+            actualMinutes = (time  % 60) % LIGHT_RANGE[2][1];
+        else if (time < LIGHT_RANGE[2][1] + 1)
+            actualMinutes = time % 60;
 
         for (int i = 0; i < LIGHT_RANGE.length; i++) {
             if (Helper.isInRange(actualMinutes, LIGHT_RANGE[i][0], LIGHT_RANGE[i][1])) {
