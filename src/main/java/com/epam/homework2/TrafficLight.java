@@ -4,23 +4,32 @@ import com.epam.utils.Helper;
 
 /**
  * Allows to return color of light in according to time
- *  @autor Natalia Lebedeva
+ *
+ * @autor Natalia Lebedeva
  */
 
 public class TrafficLight {
 
+    /**
+     * Contains borders for each of colors
+     * Changed borders for checking logic are in comments
+     */
     private static final int[][] LIGHT_RANGE = {
             {0, 1},
             {2, 4},
             {5, 9}
+//            {0, 3},
+//            {4, 6},
+//            {7, 11}
     };
 
     /**
      * Returns color of light in according to time
+     *
      * @param time - time in minutes.
      * @return lightColor - current object according to time
-     * @exception NullPointerException - if time is null.
-     * @exception IllegalArgumentException - if time is negative.
+     * @throws NullPointerException     - if time is null.
+     * @throws IllegalArgumentException - if time is negative.
      */
     public static LightColor GetLight(Integer time) throws IllegalArgumentException, NullPointerException {
 
@@ -30,13 +39,15 @@ public class TrafficLight {
         if (time < 0)
             throw new IllegalArgumentException("Time should be positive number");
 
+        if (time >= 60) {
+            time %= 60; //we don't take hours into account
+        }
+
         LightColor lightColor = null;
         Integer actualMinutes = time; // minutes responsible for color
 
         if (time >= LIGHT_RANGE[2][1] + 1)
-            actualMinutes = (time  % 60) % LIGHT_RANGE[2][1];
-        else if (time < LIGHT_RANGE[2][1] + 1)
-            actualMinutes = time % 60;
+            actualMinutes = time % (LIGHT_RANGE[2][1] + 1);
 
         for (int i = 0; i < LIGHT_RANGE.length; i++) {
             if (Helper.isInRange(actualMinutes, LIGHT_RANGE[i][0], LIGHT_RANGE[i][1])) {
