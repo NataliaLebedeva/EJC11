@@ -10,18 +10,18 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         System.out.println("enter number of minutes");
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        String timeRaw = reader.readLine();
-        String message = null;
+        try(BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
+            String timeRaw = reader.readLine();
+            String message = "NaN";
 
-        if (Helper.isDigit(timeRaw)) {
-            LightColor lightColor1 = TrafficLight.GetLight(Integer.parseInt(timeRaw));
-            message = lightColor1.getName();
-        } else {
-            message = "NaN";
+            if (Helper.isDigit(timeRaw)) {
+                LightColor lightColor1 = TrafficLight.GetLight(Integer.parseInt(timeRaw));
+                message = lightColor1.getName();
+            }
+
+            System.out.println(message);
         }
-        System.out.println(message);
-
     }
+
 }
 

@@ -18,9 +18,6 @@ public class TrafficLight {
             {0, 1},
             {2, 4},
             {5, 9}
-//            {0, 3},
-//            {4, 6},
-//            {7, 11}
     };
 
     /**
@@ -33,18 +30,19 @@ public class TrafficLight {
      */
     public static LightColor GetLight(Integer time) throws IllegalArgumentException, NullPointerException {
 
-        if (time == null)
+        if (time == null) {
             throw new NullPointerException("Time can not be null");
-
-        if (time < 0)
-            throw new IllegalArgumentException("Time should be positive number");
-
-        if (time >= 60) {
-            time %= 60; //we don't take hours into account
         }
-
+        if (time < 0) {
+            throw new IllegalArgumentException("Time should be positive number");
+        }
+        if (time >= 60) {
+            //we don't take hours into account
+            time %= 60;
+        }
         LightColor lightColor = null;
-        Integer actualMinutes = time; // minutes responsible for color
+
+        Integer actualMinutes = time;
 
         if (time >= LIGHT_RANGE[2][1] + 1)
             actualMinutes = time % (LIGHT_RANGE[2][1] + 1);
@@ -54,7 +52,6 @@ public class TrafficLight {
                 lightColor = new LightColor(i);
             }
         }
-
         return lightColor;
     }
 
