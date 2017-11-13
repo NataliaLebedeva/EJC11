@@ -12,9 +12,9 @@ public class Main {
     public static void main(String[] args) throws IOException {
 //        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 //        String separator = bufferedReader.readLine();
-//        String myString = bufferedReader.readLine();
 //        Character sep = separator.charAt(0);
 
+//        String myString = bufferedReader.readLine();
 //        String[] splitStrings = split(sep, myString);
 //        printArrayReverse(splitStrings);
 
@@ -34,6 +34,7 @@ public class Main {
         printArrayReverse(testString);
 
         testString = splitCollection('_', "aa_vv_dd");
+        printArrayReverse(testString);
 
 //        printArrayReverse("_a_v_".split("_"));
 
