@@ -1,19 +1,19 @@
-package com.epam.lesson24102017;
+package com.epam.lessons.lesson24102017;
 
-public class Cat2 {
+public class Cat {
     public static void main(String[] args) {
         System.out.println(somethingStrange());
     }
-
-    private static int somethingStrange() {
+    private static int somethingStrange(){
+        int count = 0;
         try {
             throw new RuntimeException();
         } catch (RuntimeException e) {
-            System.out.println(20);
-            System.exit(1);
+            count = 10;
+            return count;
         } finally {
-            System.out.println( 10);
+            count = 20;
+            return count;
         }
-        return 1;
     }
 }

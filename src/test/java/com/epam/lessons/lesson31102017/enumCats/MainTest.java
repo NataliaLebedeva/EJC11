@@ -1,4 +1,4 @@
-package com.epam.lesson31102017.enumCats;
+package com.epam.lessons.lesson31102017.enumCats;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;

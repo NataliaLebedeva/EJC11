@@ -1,4 +1,4 @@
-package com.epam.lesson24102017;
+package com.epam.lessons.lesson24102017;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package com.epam.lesson17102017;
+package com.epam.lessons.lesson17102017;
 
 /**
  * Created by Nata on 17.10.2017.

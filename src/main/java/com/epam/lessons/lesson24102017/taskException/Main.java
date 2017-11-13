@@ -1,4 +1,4 @@
-package com.epam.lesson24102017.taskException;
+package com.epam.lessons.lesson24102017.taskException;
 
 import java.io.BufferedReader;
 import java.io.IOException;
