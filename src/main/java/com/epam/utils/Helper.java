@@ -1,5 +1,7 @@
 package com.epam.utils;
 
+import java.util.List;
+
 public class Helper {
     /**
      * Checks if the point belongs to the segment
@@ -27,5 +29,15 @@ public class Helper {
             if (!Character.isDigit(myString.charAt(i)))
                 return false;
         return true;
+    }
+
+    public static Double getMaxInSequence(List<Double> sequence) {
+        Double max = 0.0;
+        for (Double s : sequence) {
+            if (s > max) {
+                max = s;
+            }
+        }
+        return max;
     }
 }
