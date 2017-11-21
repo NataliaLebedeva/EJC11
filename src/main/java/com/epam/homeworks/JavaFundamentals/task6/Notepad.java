@@ -15,12 +15,11 @@ public class Notepad {
         allNotesInNotepad.remove(i);
     }
 
-
-    public void modifyNote(int index, String titleChanged, String textChanged) {
-
-    }
-
     public List<String> getAllNotes() {
         return allNotesInNotepad;
+    }
+
+    public void modifyNote(Note note) {
+
     }
 }
