@@ -4,37 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Notepad {
-    private static List<String> allNotesInNotepad = new ArrayList<>();
+    public static List<String> allNotesInNotepad = new ArrayList<>();
 
-    protected class Note{
-        private String title;
-        private String text;
 
-        public Note(String title, String text) {
-            this.title = title;
-            this.text = text;
-        }
+    public void addNote(Note firstNote) {
+        allNotesInNotepad.add(firstNote.title);
+    }
+
+    public void deleteNote(int i) {
+        allNotesInNotepad.remove(i);
+    }
+
+
+    public void modifyNote(int index, String titleChanged, String textChanged) {
 
     }
 
-    public void addNote(Object note){
-        allNotesInNotepad.add((String) note);
+    public List<String> getAllNotes() {
+        return allNotesInNotepad;
     }
-
-    public void deleteNote(Object note) {
-        allNotesInNotepad.remove(note);
-    }
-
-    public void changeNote(Object note) {
-
-    }
-
-    public void viewAllNotes() {
-        for (String note : allNotesInNotepad) {
-            System.out.println(note);
-
-        }
-
-    }
-
 }
