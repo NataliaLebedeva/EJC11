@@ -19,6 +19,7 @@ public class MainTest {
 
     @Test
     public void testGetCatName() {
+
         Assert.assertEquals("You can come in", main.isCatInList("BARSIK"));
     }
 

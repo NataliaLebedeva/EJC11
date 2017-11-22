@@ -47,10 +47,8 @@ public class TrafficLightNG_Tests {
         Assert.assertEquals(expectedLightColor.getIndex(), actualLightColor.getIndex());
     }
 
-    @Test(
-            expectedExceptions = {IllegalArgumentException.class, NullPointerException.class},
-            dataProvider = "trafficLightNegativeTestMap"
-    )
+    @Test(expectedExceptions = {IllegalArgumentException.class, NullPointerException.class},
+            dataProvider = "trafficLightNegativeTestMap")
     public void trafficLightTestNegativeScenario(Integer time) throws IllegalArgumentException {
         TrafficLight.GetLight(time);
     }

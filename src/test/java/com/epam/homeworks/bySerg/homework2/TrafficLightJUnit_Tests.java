@@ -1,7 +1,6 @@
 package com.epam.homeworks.bySerg.homework2;
 
-
-import junit.framework.Assert;
+import org.testng.Assert;
 import org.junit.jupiter.api.Test;
 
 
