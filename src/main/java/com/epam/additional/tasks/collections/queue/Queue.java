@@ -1,10 +1,6 @@
 package com.epam.additional.tasks.collections.queue;
 
-import java.util.ArrayDeque;
-import java.util.Deque;
 import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.concurrent.ConcurrentLinkedDeque;
 
 @SuppressWarnings("unchecked")
 public class Queue<T> implements IQueue<T>, Iterable<T> {
@@ -30,14 +26,12 @@ public class Queue<T> implements IQueue<T>, Iterable<T> {
         Node newNode = new Node();
         newNode.data = item;
         if (head == null) {
-            head = newNode;
-            newNode.next = tail;
-            tail = newNode;
+            head = newNode; //sets first node as a Head
         } else {
-            tail.prev = newNode;
-            newNode.next = tail;
-            tail = newNode;
+            tail.prev = newNode; // links added before node to current node
         }
+        newNode.next = tail; // links current node to node added before
+        tail = newNode; // sets flag Tail to the last added node
         count++;
     }
 
@@ -55,10 +49,10 @@ public class Queue<T> implements IQueue<T>, Iterable<T> {
     public T poll() {
         T res = null;
         if (count != 0) {
+            Node temp  = head.prev;
             count--;
             res = head.data;
-            head.data = null;
-            head = null;
+            head = temp;
         }
         return res;
     }
