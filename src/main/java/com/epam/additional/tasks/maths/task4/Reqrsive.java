@@ -1,4 +1,4 @@
-package com.epam.additional.tasks.task4;
+package com.epam.additional.tasks.maths.task4;
 
 public class Reqrsive {
 

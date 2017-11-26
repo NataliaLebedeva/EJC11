@@ -1,4 +1,4 @@
-package com.epam.additional.tasks.task2;
+package com.epam.additional.tasks.maths.task2;
 
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;

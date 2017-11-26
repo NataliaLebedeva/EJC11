@@ -1,4 +1,4 @@
-package com.epam.additional.tasks.task3;
+package com.epam.additional.tasks.maths.task3;
 
 public class MyStringUtils {
     private static final Character[] PROHIBITED_CHARS = new Character[]{' ', '!', '@', '#', '$'};

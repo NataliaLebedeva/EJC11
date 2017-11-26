@@ -1,11 +1,9 @@
-package com.epam.additional.tasks.task1;
+package com.epam.additional.tasks.maths.task1;
 
 import org.apache.commons.lang3.ArrayUtils;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Stack;
 
 public class Main {

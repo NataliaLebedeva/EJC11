@@ -1,4 +1,4 @@
-package com.epam.additional.tasks.task2;
+package com.epam.additional.tasks.maths.task2;
 
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
