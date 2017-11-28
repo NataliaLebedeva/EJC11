@@ -36,4 +36,20 @@ public class QueueTest extends QueueTestPreSet {
         Assert.assertEquals(queue.size(), 2);
 
     }
+
+    @Test
+    public void testQueueForEach() {
+        queue.add("qwe 0");
+        queue.add("qwe 1");
+        queue.add("qwe 2");
+        queue.add("qwe 3");
+        queue.add("qwe 4");
+
+        for (String e : queue) {
+            System.out.println(e);
+        }
+
+        Assert.assertFalse(queue.isEmpty());
+        Assert.assertEquals(queue.size(), 5);
+    }
 }

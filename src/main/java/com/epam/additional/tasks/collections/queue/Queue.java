@@ -49,7 +49,7 @@ public class Queue<T> implements IQueue<T>, Iterable<T> {
     public T poll() {
         T res = null;
         if (count != 0) {
-            Node temp  = head.prev;
+            Node temp = head.prev;
             count--;
             res = head.data;
             head = temp;
@@ -69,6 +69,26 @@ public class Queue<T> implements IQueue<T>, Iterable<T> {
 
     @Override
     public Iterator<T> iterator() {
-        return null;
+
+        return new Iterator<T>() {
+            Node current = tail;
+
+            @Override
+            public boolean hasNext() {
+                return current != null;
+            }
+
+            @Override
+            public T next() {
+                T data = current.data;
+                current = current.next;
+                return data;
+//                T data = current.data;
+//                if (current.next != null)
+//                    current = current.next;
+//                else data = current.next.data;
+//                return data;
+            }
+        };
     }
 }
