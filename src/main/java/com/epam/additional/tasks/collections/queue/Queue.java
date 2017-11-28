@@ -83,11 +83,6 @@ public class Queue<T> implements IQueue<T>, Iterable<T> {
                 T data = current.data;
                 current = current.next;
                 return data;
-//                T data = current.data;
-//                if (current.next != null)
-//                    current = current.next;
-//                else data = current.next.data;
-//                return data;
             }
         };
     }

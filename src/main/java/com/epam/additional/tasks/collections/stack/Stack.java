@@ -25,7 +25,7 @@ public class Stack<T> implements IStack<T>, Iterable<T> {
 
     @Override
     public void push(T item) {
-        if(count == nodeData.length){
+        if (count == nodeData.length) {
             Object[] newData = new Object[nodeData.length * 2];
             System.arraycopy(nodeData, 0, newData, 0, nodeData.length);
             nodeData = newData;
@@ -57,6 +57,7 @@ public class Stack<T> implements IStack<T>, Iterable<T> {
     public Iterator<T> iterator() {
         return new Iterator<T>() {
             int i = count;
+
             @Override
             public boolean hasNext() {
                 return i > 0;
