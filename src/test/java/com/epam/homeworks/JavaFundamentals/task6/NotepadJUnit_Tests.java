@@ -12,7 +12,7 @@ public class NotepadJUnit_Tests {
 
     @BeforeMethod
     public void setup() {
-        notepad = new Notepad();
+        notepad = new Notepad(3);
     }
 
     @DataProvider

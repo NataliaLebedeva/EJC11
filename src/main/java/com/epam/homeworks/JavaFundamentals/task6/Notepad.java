@@ -6,8 +6,17 @@ import java.util.List;
 public class Notepad {
     public List<Note> notes = new ArrayList<>();
 
+    private int price;
+
     public void addNote(Note note) {
         notes.add(note);
+    }
+
+    public Notepad() {
+        price = 0;
+    }
+    public Notepad(int price) {
+        setPrice(price);
     }
 
     public void deleteNote(int i) throws Exception {
@@ -46,5 +55,14 @@ public class Notepad {
             throw new IllegalArgumentException("no such note in notepad");
         }
         return notes.get(i);
+
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public int getPrice() {
+        return price;
     }
 }
