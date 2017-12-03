@@ -10,8 +10,8 @@ public class Book extends Books {
     private String title;
     private String publishingHouse;
 
-    public Book(String nameStationery, double price, String title, String publishingHouse) {
-        super(nameStationery, price);
+    public Book(String nameStationery, double price, String author, String title, String publishingHouse) {
+        super(nameStationery, price, author);
         this.title = title;
         this.publishingHouse = publishingHouse;
     }
@@ -37,8 +37,10 @@ public class Book extends Books {
     @Override
     public String toString() {
         return "Book{" +
-                "price=" + price +
-                ", title='" + title + '\'' +
+                "title='" + title + '\'' +
+                ", publishingHouse='" + publishingHouse + '\'' +
+                ", author='" + author + '\'' +
+                ", price=" + price +
                 '}';
     }
 }

@@ -23,7 +23,7 @@ public class WorkspaceTest {
         Assert.assertTrue(workspace.kit.isEmpty());
         Stationery pen = new Pen("pen", 5.3, "black", 0.3, "Bic");
         Stationery stapler = new Stapler("stapler", 54.2);
-        Stationery javaBook = new ManualBook("manual", 740.5, "java");
+        Stationery javaBook = new ManualBook("manual", 740.5, "Bruce Eckel","java");
         workspace.kit.add(pen);
         workspace.kit.add(stapler);
         workspace.kit.add(javaBook);

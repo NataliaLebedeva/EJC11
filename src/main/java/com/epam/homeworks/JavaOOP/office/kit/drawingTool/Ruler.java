@@ -12,4 +12,12 @@ public class Ruler extends Stationery {
         super(nameStationery, price);
         this.rulerLength = rulerLength;
     }
+
+    @Override
+    public String toString() {
+        return "Ruler{" +
+                "rulerLength=" + rulerLength +
+                ", price=" + price +
+                '}';
+    }
 }

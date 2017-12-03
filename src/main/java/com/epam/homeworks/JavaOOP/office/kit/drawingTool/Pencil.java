@@ -8,4 +8,13 @@ public class Pencil extends WritingTools{
         super(nameStationery, price, color);
         this.hardness = hardness;
     }
+
+    @Override
+    public String toString() {
+        return "Pencil{" +
+                "hardness='" + hardness + '\'' +
+                ", color='" + color + '\'' +
+                ", price=" + price +
+                '}';
+    }
 }

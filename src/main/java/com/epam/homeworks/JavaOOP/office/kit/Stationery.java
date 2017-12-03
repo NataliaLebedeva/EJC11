@@ -8,7 +8,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class Stationery {
-    private String nameStationery;
+    protected String nameStationery;
     protected double price;
 
     @Override

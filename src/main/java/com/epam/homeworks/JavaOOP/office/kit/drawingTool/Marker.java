@@ -12,4 +12,13 @@ public class Marker extends WritingTools {
         super(nameStationery, price, color);
         this.thickness = thickness;
     }
+
+    @Override
+    public String toString() {
+        return "Marker{" +
+                "thickness=" + thickness +
+                ", color='" + color + '\'' +
+                ", price=" + price +
+                '}';
+    }
 }
