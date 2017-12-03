@@ -1,12 +1,19 @@
 package com.epam.homeworks.JavaFundamentals.task6;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Getter
+@Setter
+
 public class Notepad {
     public List<Note> notes = new ArrayList<>();
-
     private int price;
+    private String nameOfStationery;
 
     public void addNote(Note note) {
         notes.add(note);
@@ -15,7 +22,9 @@ public class Notepad {
     public Notepad() {
         price = 0;
     }
-    public Notepad(int price) {
+
+    public Notepad(String nameOfStationery, int price) {
+        setNameOfStationery("Notepad");
         setPrice(price);
     }
 
@@ -55,14 +64,31 @@ public class Notepad {
             throw new IllegalArgumentException("no such note in notepad");
         }
         return notes.get(i);
-
     }
 
-    public void setPrice(int price) {
-        this.price = price;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Notepad notepad = (Notepad) o;
+
+        if (price != notepad.price) return false;
+        return notes != null ? notes.equals(notepad.notes) : notepad.notes == null;
     }
 
-    public int getPrice() {
-        return price;
+    @Override
+    public int hashCode() {
+        int result = notes != null ? notes.hashCode() : 0;
+        result = 31 * result + price;
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Notepad{" +
+                "notes=" + notes +
+                ", price=" + price +
+                '}';
     }
 }

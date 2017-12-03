@@ -7,12 +7,12 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class NotepadJUnit_Tests {
+public class NotepadTestNG {
     private Notepad notepad;
 
     @BeforeMethod
     public void setup() {
-        notepad = new Notepad(3);
+        notepad = new Notepad("notepad", 3);
     }
 
     @DataProvider
