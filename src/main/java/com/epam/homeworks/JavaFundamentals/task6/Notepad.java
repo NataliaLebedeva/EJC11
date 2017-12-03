@@ -12,7 +12,7 @@ import java.util.List;
 
 public class Notepad {
     public List<Note> notes = new ArrayList<>();
-    private int price;
+    private double price;
     private String nameOfStationery;
 
     public void addNote(Note note) {
@@ -21,10 +21,11 @@ public class Notepad {
 
     public Notepad() {
         price = 0;
+        nameOfStationery = "notepad";
     }
 
     public Notepad(String nameOfStationery, int price) {
-        setNameOfStationery("Notepad");
+        setNameOfStationery(nameOfStationery);
         setPrice(price);
     }
 
@@ -80,7 +81,7 @@ public class Notepad {
     @Override
     public int hashCode() {
         int result = notes != null ? notes.hashCode() : 0;
-        result = 31 * result + price;
+        result = 31 * result + (int) price;
         return result;
     }
 

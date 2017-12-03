@@ -3,20 +3,34 @@ package com.epam.homeworks.JavaOOP.office.service;
 import com.epam.homeworks.JavaOOP.office.Employee;
 import com.epam.homeworks.JavaOOP.office.kit.Stationery;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 
 public class Workspace {
     private Employee employee;
-    private LinkedList<Stationery> kit;
+    public ArrayList<Stationery> kit;
 
-    public Workspace(Employee employee, LinkedList<Stationery> kit) {
+    Workspace(Employee employee) {
         setEmployee(employee);
-        this.kit = new LinkedList<>();
+        this.kit = new ArrayList<>(20);
     }
 
     private void setEmployee(Employee employee) {
         this.employee = employee;
     }
 
+    Employee getEmployee() {
+        return employee;
+    }
+
+    public void add(Stationery stationery) {
+        kit.add(stationery);
+    }
+
+    double getTotalPrice() {
+        double totalPrice = 0;
+        for (Stationery s : kit)
+            totalPrice += s.getPrice();
+        return totalPrice;
+    }
 
 }
