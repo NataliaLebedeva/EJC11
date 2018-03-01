@@ -40,6 +40,12 @@ public class TrafficLightNG_Tests {
     }
 
     @Test(dataProvider = "trafficLightTestMap")
+    public void test1(int i, LightColor color) {
+        System.out.println(String.format("int: %s , String: %s", i, color.getName()));
+    }
+
+
+    @Test(dataProvider = "trafficLightTestMap")
     public void trafficLightTestPositiveScenario(Integer time, LightColor expectedLightColor) throws Exception {
         LightColor actualLightColor = TrafficLight.GetLight(time);
 
