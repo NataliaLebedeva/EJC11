@@ -24,3 +24,28 @@ static              RefType::staticMethod       (args) -> RefType.staticMethod(a
 bound instance      expr::instMethod            (args) -> expr.instMethod(args)
 unbound inst        RefType::instMethod         (arg0, restArgs) -> arg0.instMethod(restArgs)
 constructor         ClassName::new              (args) -> new ClassName(args)
+
+
+Intermediate operations:
+
+filter
+distinct    stateful (хранит промежут. значения/состояния)     unbounded (не известно, сколько элементов в результате)
+skip        stateful        bounded
+limit       stateful        bounded
+map
+flatMap
+sorted      stateful        unbounded
+
+
+Terminal operations
+anyMatch
+noneMatch
+allMatch
+findAny
+findFirst
+forEach
+collect
+reduce      stateful        bounded     (T, T) -> T     map(o -> 1).reduce()
+count
+
+
